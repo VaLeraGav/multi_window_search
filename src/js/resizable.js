@@ -65,6 +65,7 @@ export class Resizable {
         }
     }
 
+
     resizeBottom(e, rect, maxHeight) {
         const newHeight = e.clientY - rect.top;
         if (newHeight > this.minHeight && (newHeight + rect.top) < (maxHeight - 3)) {

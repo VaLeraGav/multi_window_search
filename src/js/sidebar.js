@@ -1,3 +1,4 @@
+
 export class Sidebar {
     constructor() {
         this.sidebarFold = document.querySelector('.js-sidebar-fold');
@@ -17,17 +18,15 @@ export class Sidebar {
     run() {
         this.setupToggle();
         this.setupDragAndDrop();
-        this.changeWidth();
+        this.changeSize();
     }
 
     setupToggle() {
         this.sidebarToggle.addEventListener('click', () => {
             this.sidebarFold.classList.toggle('active');
 
-
-
             if (this.sidebarFold.style.left === '0px') {
-                this.sidebarFold.style.left = this.left ;
+                this.sidebarFold.style.left = this.left ;В
             } else {
                 this.sidebarFold.style.left = '0px';
             }
@@ -38,10 +37,14 @@ export class Sidebar {
         const sidebarLi = this.sidebarFold.querySelector('.js-sidebar-li');
         const sidebarLiList = sidebarLi.querySelectorAll('li');
 
+        let sdDelete
+        let sdTitle
         sidebarLiList.forEach(sdLi => {
-            sdLi.addEventListener('click', () => {
-                console.log('Происходит всплывание или создание блока, который был скрыт.');
-            });
+            sdTitle = sdLi.querySelector('.js-sidebar-title');
+            sdTitle.addEventListener('click', () =>  this.sidebarShowSection(sdLi));
+
+            sdDelete = sdLi.querySelector('.js-sidebar-delete');
+            sdDelete.addEventListener('click', () => this.sidebarDelete(sdLi));
 
             sdLi.addEventListener('dragstart', (e) => this.handleDragStart(e, sdLi));
             sdLi.addEventListener('dragend', (e) => this.handleDragEnd(e, sdLi));
@@ -49,6 +52,15 @@ export class Sidebar {
 
         sidebarLi.addEventListener('dragover', (e) => this.initSortableList(e, sidebarLi));
         sidebarLi.addEventListener('dragenter', e => e.preventDefault());
+    }
+
+    sidebarShowSection(sdLi) {
+        console.log('click sdLi');
+    }
+
+    sidebarDelete(sdLi) {
+        console.log('click sdDelete');
+        sdLi.remove()
     }
 
     handleDragStart(e, sdLi) {
@@ -75,7 +87,7 @@ export class Sidebar {
         }
     }
 
-    changeWidth() {
+    changeSize() {
         const changingSides = this.sidebarFold.querySelectorAll('.js-sidebar-changing-size div');
         changingSides.forEach(changingSide => {
             changingSide.addEventListener('mousedown', this.initResize.bind(this));

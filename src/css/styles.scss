@@ -1,7 +1,6 @@
 * {
     margin: 0;
     padding: 0;
-    overflow: hidden; /* Убираем прокрутку */
 }
 
 html {
@@ -12,6 +11,8 @@ html {
     --white-text: #e2e3e7;
     --prismBlockBg: #282a36;
     --foregroundAlt: #868d9a;
+
+    overflow: hidden; /* Убираем прокрутку */
 }
 
 body {
@@ -19,10 +20,12 @@ body {
     background: var(--bk-font);
     color: var(--white-text);
     scroll-behavior: smooth;
+
 }
 
-h1 {
-    height: 1.7em;
+.canvas-section {
+    width: 100%;
+    height: 100vh;
 }
 
 .resizable {
@@ -156,6 +159,7 @@ h1 {
     flex-direction: column;
     /* min-width: 320px;
     margin: 0 auto; */
+
 }
 
 .resizable-body ol {
@@ -194,10 +198,18 @@ h1 {
     margin: 0 auto;
 }
 
-.resizable-relative .resizable-new {
-    height: 50px;
-    margin-top: 5px;
-    border: 1px solid var(--border);
+.suggests {
+    .suggest {
+        height: 50px;
+        margin-top: 5px;
+        border: 1px solid var(--border);
+
+        &.dragging {
+            opacity: 0.6;
+            background: var(--bk-resizable);
+            border: 1px dashed #ccc;
+        }
+    }
 }
 
 .point {
@@ -272,75 +284,6 @@ code {
 .sidebar-fold-btn:hover {
     background-color: #bbb;
     /* Более темный серый при наведении */
-}
-
-.sidebar-fold {
-    position: fixed;
-    display: flex;
-    width: 360px;
-    height: 465px;
-    // left: -363px;
-    left: -337px;
-
-    z-index: 9999;
-    transition: left 1s;
-    top: 48px;
-}
-
-.sidebar-fold .right{
-    right: 24px;
-}
-
-.sidebar-li {
-    height: calc(100% - 2px);
-    width: 100% ;
-    background: var(--bk-resizable);
-    border: 1px solid var(--border);
-
-}
-
-.sidebar-fold.active {
-    // left: 0;
-    transition: left 1s;
-}
-
-.sidebar-fold-btn {
-    height: 14px;
-    // position: absolute;
-}
-
-
-.sidebar-fold span {
-    font: normal normal normal 14px / 1 FontAwesome;
-    padding: 2px 0 4px 9px;
-    overflow: hidden;
-    height: 17px;
-    line-height: 1.4;
-}
-
-.sidebar-fold .details {
-    display: flex;
-    align-items: center;
-}
-
-
-.sidebar-fold li {
-    list-style-type: none;
-    background-color: #141414;
-    margin: 8px;
-    border: 1px solid var(--border);
-}
-
-li.dragging {
-    opacity: 0.6;
-    background: var(--bk-resizable);
-    border: 1px dashed #ccc;
-}
-
-
-li.dragging :where(.details, i) {
-    background: #ef0505;
-    opacity: 0;
 }
 
 h1 {

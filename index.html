@@ -11,232 +11,236 @@
     <div class="sidebar">
         <div class="create-box-button js-create-box-button">создать окно поиска</div>
         <div class="sidebar-fold js-sidebar-fold">
-                <div class="sidebar-li js-sidebar-li">
-                    <li draggable="true" title="/mnt/c/Users/Ucer/Desktop/psn/droup">
-                        <div class="details">
-                            <span>/mnt/c/Users/Ucer/Desktop/psn/droup 1</span>
-                        </div>
-                        <i class="uil uil-draggabledots"></i>
-                    </li>
-                    <li draggable="true" title="/mnt/c/Users/Ucer/Desktop/psn/droup">
-                        <div class="details">
-                            <span>/mnt/c/Users/Ucer/Desktop/psn/droup 2</span>
-                        </div>
-                        <i class="uil uil-draggabledots"></i>
-                    </li>
-                    <li draggable="true" title="/mnt/c/Users/Ucer/Desktop/psn/droup">
-                        <div class="details">
-                            <span>/mnt/c/Users/Ucer/Desktop/psn/droup 3 </span>
-                        </div>
-                        <i class="uil uil-draggabledots"></i>
-                    </li>
-                    <li draggable="true" title="/mnt/c/Users/Ucer/Desktop/psn/droup">
-                        <div class="details">
-                            <span>/mnt/c/Users/Ucer/Desktop/psn/droup 4</span>
-                        </div>
-                        <i class="uil uil-draggabledots"></i>
-                    </li>
-                    <li draggable="true" title="/mnt/c/Users/Ucer/Desktop/psn/droup">
-                        <div class="details">
-                            <span>/mnt/c/Users/Ucer/Desktop/psn/droup 5</span>
-                        </div>
-                        <i class="uil uil-draggabledots"></i>
-                    </li>
-                </div>
-                <div class="sidebar-fold-btn js-sidebar-toggle">&lt;</div>
-                <div class="changing-size js-sidebar-changing-size">
-                    <div class="bottom-right"></div>
-                    <div class="bottom"></div>
-                    <div class="right"></div>
-                </div>
-        </div>
-
-    </div>
-    <div class="resizable js-window" style="z-index: 3; left: 300px; width: 425px; height: 400px; top: 14px;">
-        <div class="header">
-            <div class="draggab js-draggableMousemove" title="/mnt/c/Users/Ucer/Desktop/psn/droup">
-                /mnt/c/Users/Ucer/Desktop/psn/droup</div>
-            <div class="action js-action-win">
-                <div class="header-close js-close">-</div>
-                <div class="header-open js-open">□</div>
-                <div class="header-delete js-delete">×</div>
+            <div class="sidebar-li js-sidebar-li">
+                <li draggable="true" title="/mnt/c/Users/Ucer/Desktop/psn/droup">
+                    <div class="title js-sidebar-title">
+                        <span>/mnt/c/Users/Ucer/Desktop/psn/droup 1</span>
+                    </div>
+                    <div class="delete js-sidebar-delete">×</div>
+                </li>
+                <li draggable="true" title="/mnt/c/Users/Ucer/Desktop/psn/droup">
+                    <div class="title js-sidebar-title">
+                        <span>/mnt/c/Users/Ucer/Desktop/psn/droup 2</span>
+                    </div>
+                    <div class="delete js-sidebar-delete">×</div>
+                </li>
+                <li draggable="true" title="/mnt/c/Users/Ucer/Desktop/psn/droup">
+                    <div class="title js-sidebar-title">
+                        <span>/mnt/c/Users/Ucer/Desktop/psn/droup 3 </span>
+                    </div>
+                    <div class="delete js-sidebar-delete">×</div>
+                </li>
+                <li draggable="true" title="/mnt/c/Users/Ucer/Desktop/psn/droup">
+                    <div class="title js-sidebar-title">
+                        <span>/mnt/c/Users/Ucer/Desktop/psn/droup 4</span>
+                    </div>
+                    <div class="delete js-sidebar-delete">×</div>
+                </li>
+                <li draggable="true" title="/mnt/c/Users/Ucer/Desktop/psn/droup">
+                    <div class="title js-sidebar-title">
+                        <span>/mnt/c/Users/Ucer/Desktop/psn/droup 5</span>
+                    </div>
+                    <div class="delete js-sidebar-delete">×</div>
+                </li>
             </div>
-        </div>
-
-        <div class="resizable-body">
-            <div class="ps-overflow">
-                <div class="resizable-content">
-                    <h1>Компактные структуры данных</h1>
-                    Компактные структуры данных – это эффективные решения для обработки больших объемов данных с
-                    минимальным
-                    использованием памяти. Они позволяют выполнять такие задачи, как фильтрация, поиск и хранение, с
-                    меньшими затратами ресурсов, что особенно полезно в Golang,
-                    <br>
-                    <code>Bloom-фильтр</code> — это битовый массив и несколько хеш-функций. Когда ты добавляешь
-                    элемент,
-                    несколько
-                    хеш-функций вычисляют индексы, которые нужно выставить в «1» в битовом массиве. При проверке
-                    элемента те
-                    же
-                    хеш‑функции вычисляют индексы и смотрят, выставлены ли они в «1». Если хотя бы один индекс равен
-                    «0»,
-                    элемент точно не принадлежит множеству. Если все равны «1» — возможно, элемент есть, но не факт
-                    (здесь и
-                    кроется возможность ложноположительного результата).
-                    <br>
-                    <br>
-                    <h2>elementFromPoint(x, y)</h2>
-
-                    `Bloom-фильтр` — это битовый массив и несколько хеш-функций. Когда ты добавляешь элемент,
-                    несколько
-                    хеш-функций вычисляют индексы, которые нужно выставить в «1» в битовом массиве. При проверке
-                    элемента те
-                    же
-                    хеш‑функции вычисляют индексы и смотрят, выставлены ли они в «1». Если хотя бы один индекс равен
-                    «0»,
-                    элемент точно не принадлежит множеству. Если все равны «1» — возможно, элемент есть, но не факт
-                    (здесь и
-                    кроется возможность ложноположительного результата).
-                    <br>
-                    `Bloom-фильтр` — это битовый массив и несколько хеш-функций. Когда ты добавляешь элемент,
-                    несколько
-                    хеш-функций вычисляют индексы, которые нужно выставить в «1» в битовом массиве. При проверке
-                    элемента те
-                    же
-                    хеш‑функции вычисляют индексы и смотрят, выставлены ли они в «1». Если хотя бы один индекс равен
-                    «0»,
-                    элемент точно не принадлежит множеству. Если все равны «1» — возможно, элемент есть, но не факт
-                    (здесь и
-                    кроется возможность ложноположительного результата).
-
-                    <ol>
-                        <li><strong>Относительно окна браузера</strong> – как <code>position:fixed</code>, отсчёт
-                            идёт от верхнего левого угла окна.
-                            <ul>
-                                <li>мы будем обозначать эти координаты как <code>clientX/clientY</code>, причина
-                                    выбора таких имён будет ясна позже, когда мы изучим свойства событий.</li>
-                            </ul>
-                        </li>
-                        <li><strong>Относительно документа</strong> – как <code>position:absolute</code> на уровне
-                            документа, отсчёт идёт от верхнего левого угла документа.
-                            <ul>
-                                <li>мы будем обозначать эти координаты как <code>pageX/pageY</code>.</li>
-                            </ul>
-                        </li>
-                    </ol>
-                    хеш‑функции вычисляют индексы и смотрят, выставлены ли они в «1». Если хотя бы один индекс равен
-                    «0»,
-                    элемент точно не принадлежит множеству. Если все равны «1» — возможно, элемент есть, но не факт
-                    (здесь и
-                    кроется возможность ложноположительного результата).
-
-                    <ul>
-                        <li><code>x/y</code> – X/Y-координаты начала прямоугольника относительно окна,</li>
-                        <li><code>width/height</code> – ширина/высота прямоугольника (могут быть отрицательными).
-                        </li>
-                    </ul>
-                </div>
+            <div class="sidebar-fold-btn js-sidebar-toggle">&lt;</div>
+            <div class="changing-size js-sidebar-changing-size">
+                <div class="bottom-right"></div>
+                <div class="bottom"></div>
+                <div class="right"></div>
             </div>
-        </div>
-
-        <div class="changing-size js-changing-size">
-            <div class="top-left"></div>
-            <div class="top-right"></div>
-            <div class="bottom-left"></div>
-            <div class="bottom-right"></div>
-            <div class="top"></div>
-            <div class="bottom"></div>
-            <div class="left"></div>
-            <div class="right"></div>
         </div>
     </div>
 
+    <div class="element-search--TEST">
+
+        <div class="resizable js-window" style="left: 500px;" data-type="search">
+            <div class="header">
+                <div class="draggab js-draggableMousemove">./</div>
+                <div class="action js-action-win">
+                    <div class="header-close js-clone">-</div>
+                    <div class="header-open  js-open">□</div>
+                    <div class="header-delete  js-delete">×</div>
+                </div>
+            </div>
 
 
-    <div class="resizable js-window" style="left: 500px;">
-        <div class="header">
-            <div class="draggab js-draggableMousemove">./</div>
-            <div class="action js-action-win">
-                <div class="header-close js-clone">-</div>
-                <div class="header-open  js-open">□</div>
-                <div class="header-delete  js-delete">×</div>
+            <div class="resizable-body ">
+                <div class="search">
+                    <input type="text" placeholder="Enter search text...">
+                    <button class="btn">search</button>
+                </div>
+                <div class="suggests ps-overflow js-presearch">
+
+                    <div draggable="true" id="1" class="suggest js-presearch-item">
+                        <div class="header">
+                            <div class="relative-path">/mnt/c/Users/Ucer/Desktop/psn/droup</div>
+                            <div class="action js-action-win" style="display: none;">
+                                <div class="header-close">-</div>
+                                <div class="header-open">□</div>
+                                <div class="header-delete">×</div>
+                            </div>
+                        </div>
+                        Изменяемый размер 1
+                    </div>
+
+                    <div draggable="true" id="2" class="suggest js-presearch-item">
+                        <div class="header">
+                            <div class="relative-path">/mnt/c/Users/Ucer/Desktop/psn/droup</div>
+                            <div class="action js-action-win" style="display: none;">
+                                <div class="header-close">-</div>
+                                <div class="header-open">□</div>
+                                <div class="header-delete">×</div>
+                            </div>
+                        </div>
+                        Изменяемый размер 2
+                    </div>
+
+                    <div draggable="true"  id="3" class="suggest js-presearch-item">
+                        <div class="header">
+                            <div class="relative-path">/mnt/c/Users/Ucer/Desktop/psn/droup</div>
+                            <div class="action js-action-win" style="display: none;">
+                                <div class="header-close">-</div>
+                                <div class="header-open">□</div>
+                                <div class="header-delete">×</div>
+                            </div>
+                        </div>
+                        Изменяемый размер 3
+                    </div>
+
+
+                    <div draggable="true"  id="4" class="suggest js-presearch-item">
+                        <div class="header">
+                            <div class="relative-path">/mnt/c/Users/Ucer/Desktop/psn/droup</div>
+                            <div class="action js-action-win" style="display: none;">
+                                <div class="header-close">-</div>
+                                <div class="header-open">□</div>
+                                <div class="header-delete">×</div>
+                            </div>
+                        </div>
+                        Изменяемый размер 4
+                    </div>
+
+
+                </div>
+            </div>
+
+            <div class="changing-size js-changing-size">
+                <div class="top-left"></div>
+                <div class="top-right"></div>
+                <div class="bottom-left"></div>
+                <div class="bottom-right"></div>
+                <div class="top"></div>
+                <div class="bottom"></div>
+                <div class="left"></div>
+                <div class="right"></div>
             </div>
         </div>
 
+    </div>
 
-        <div class="resizable-body ">
-            <div class="search">
-                <input type="text" placeholder="Enter search text...">
-                <button class="btn">search</button>
+    <div class="canvas-section js-canvas-section">
+        <div class="resizable js-window" style="z-index: 3; left: 300px; width: 425px; height: 400px; top: 14px;">
+            <div class="header">
+                <div class="draggab js-draggableMousemove" title="/mnt/c/Users/Ucer/Desktop/psn/droup">
+                    /mnt/c/Users/Ucer/Desktop/psn/droup</div>
+                <div class="action js-action-win">
+                    <div class="header-close js-close">-</div>
+                    <div class="header-open js-open">□</div>
+                    <div class="header-delete js-delete">×</div>
+                </div>
             </div>
-            <div class="search-find-elem-list ps-overflow">
-                <div class="resizable-relative">
-                    <div class="resizable-new js-window-child">
-                        <div class="header js-header-child">
-                            <div class="draggab">/mnt/c/Users/Ucer/Desktop/psn/droup</div>
-                            <div class="action js-action-win" style="display: none;">
-                                <div class="header-close">-</div>
-                                <div class="header-open">□</div>
-                                <div class="header-delete">×</div>
-                            </div>
-                        </div>
-                        Изменяемый размер
-                    </div>
-                </div>
-                <div class="resizable-relative">
-                    <div class="resizable-new js-window-child">
-                        <div class="header js-header-child">
-                            <div class="draggab">/mnt/c/Users/Ucer/Desktop/psn/droup</div>
-                            <div class="action js-action-win" style="display: none;">
-                                <div class="header-close">-</div>
-                                <div class="header-open">□</div>
-                                <div class="header-delete">×</div>
-                            </div>
-                        </div>
-                        Изменяемый размер
-                    </div>
-                </div>
-                <div class="resizable-relative">
-                    <div class="resizable-new js-window-child">
-                        <div class="header js-header-child">
-                            <div class="draggab">/mnt/c/Users/Ucer/Desktop/psn/droup</div>
-                            <div class="action js-action-win" style="display: none;">
-                                <div class="header-close">-</div>
-                                <div class="header-open">□</div>
-                                <div class="header-delete">×</div>
-                            </div>
-                        </div>
-                        Изменяемый размер
-                    </div>
-                </div>
-                <div class="resizable-relative">
-                    <div class="resizable-new js-window-child">
-                        <div class="header js-header-child">
-                            <div class="draggab">/mnt/c/Users/Ucer/Desktop/psn/droup</div>
-                            <div class="action js-action-win" style="display: none;">
-                                <div class="header-close">-</div>
-                                <div class="header-open">□</div>
-                                <div class="header-delete">×</div>
-                            </div>
-                        </div>
-                        Изменяемый размер
-                    </div>
-                </div>
 
+            <div class="resizable-body">
+                <div class="ps-overflow">
+                    <div class="resizable-content">
+                        <h1>Компактные структуры данных</h1>
+                        Компактные структуры данных – это эффективные решения для обработки больших объемов данных с
+                        минимальным
+                        использованием памяти. Они позволяют выполнять такие задачи, как фильтрация, поиск и хранение, с
+                        меньшими затратами ресурсов, что особенно полезно в Golang,
+                        <br>
+                        <code>Bloom-фильтр</code> — это битовый массив и несколько хеш-функций. Когда ты добавляешь
+                        элемент,
+                        несколько
+                        хеш-функций вычисляют индексы, которые нужно выставить в «1» в битовом массиве. При проверке
+                        элемента те
+                        же
+                        хеш‑функции вычисляют индексы и смотрят, выставлены ли они в «1». Если хотя бы один индекс равен
+                        «0»,
+                        элемент точно не принадлежит множеству. Если все равны «1» — возможно, элемент есть, но не факт
+                        (здесь и
+                        кроется возможность ложноположительного результата).
+                        <br>
+                        <br>
+                        <h2>elementFromPoint(x, y)</h2>
+
+                        `Bloom-фильтр` — это битовый массив и несколько хеш-функций. Когда ты добавляешь элемент,
+                        несколько
+                        хеш-функций вычисляют индексы, которые нужно выставить в «1» в битовом массиве. При проверке
+                        элемента те
+                        же
+                        хеш‑функции вычисляют индексы и смотрят, выставлены ли они в «1». Если хотя бы один индекс равен
+                        «0»,
+                        элемент точно не принадлежит множеству. Если все равны «1» — возможно, элемент есть, но не факт
+                        (здесь и
+                        кроется возможность ложноположительного результата).
+                        <br>
+                        `Bloom-фильтр` — это битовый массив и несколько хеш-функций. Когда ты добавляешь элемент,
+                        несколько
+                        хеш-функций вычисляют индексы, которые нужно выставить в «1» в битовом массиве. При проверке
+                        элемента те
+                        же
+                        хеш‑функции вычисляют индексы и смотрят, выставлены ли они в «1». Если хотя бы один индекс равен
+                        «0»,
+                        элемент точно не принадлежит множеству. Если все равны «1» — возможно, элемент есть, но не факт
+                        (здесь и
+                        кроется возможность ложноположительного результата).
+
+                        <ol>
+                            <li><strong>Относительно окна браузера</strong> – как <code>position:fixed</code>, отсчёт
+                                идёт от верхнего левого угла окна.
+                                <ul>
+                                    <li>мы будем обозначать эти координаты как <code>clientX/clientY</code>, причина
+                                        выбора таких имён будет ясна позже, когда мы изучим свойства событий.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Относительно документа</strong> – как <code>position:absolute</code> на уровне
+                                документа, отсчёт идёт от верхнего левого угла документа.
+                                <ul>
+                                    <li>мы будем обозначать эти координаты как <code>pageX/pageY</code>.</li>
+                                </ul>
+                            </li>
+                        </ol>
+                        хеш‑функции вычисляют индексы и смотрят, выставлены ли они в «1». Если хотя бы один индекс равен
+                        «0»,
+                        элемент точно не принадлежит множеству. Если все равны «1» — возможно, элемент есть, но не факт
+                        (здесь и
+                        кроется возможность ложноположительного результата).
+
+                        <ul>
+                            <li><code>x/y</code> – X/Y-координаты начала прямоугольника относительно окна,</li>
+                            <li><code>width/height</code> – ширина/высота прямоугольника (могут быть отрицательными).
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-        </div>
 
-        <div class="changing-size js-changing-size">
-            <div class="top-left"></div>
-            <div class="top-right"></div>
-            <div class="bottom-left"></div>
-            <div class="bottom-right"></div>
-            <div class="top"></div>
-            <div class="bottom"></div>
-            <div class="left"></div>
-            <div class="right"></div>
+            <div class="changing-size js-changing-size">
+                <div class="top-left"></div>
+                <div class="top-right"></div>
+                <div class="bottom-left"></div>
+                <div class="bottom-right"></div>
+                <div class="top"></div>
+                <div class="bottom"></div>
+                <div class="left"></div>
+                <div class="right"></div>
+            </div>
         </div>
     </div>
+
+
     <script type="module" src="src/main.js"></script>
 </body>
 

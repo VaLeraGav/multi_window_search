@@ -5,6 +5,7 @@ export class Move {
         this.isDragging = false;
         this.windowActive = null;
         this.offset = {};
+        this.presearchWrap = null;
     }
 
     run(documentWindow) {
@@ -21,14 +22,18 @@ export class Move {
                 // draggableMousemoveTo2Click(draggableM, windowActive);
             });
 
-            // draggable.addEventListener("dblclick", (event) => {
-            //     const range = document.createRange();
-            //     range.selectNodeContents(draggable);
-            //     const selection = window.getSelection();
-            //     selection.removeAllRanges();
-            //     selection.addRange(range);
-            // });
+            draggable.addEventListener("dblclick", (event) => {
+                this.dblclickHeader();
+            });
         }
+    }
+
+    dblclickHeader() {
+        const range = document.createRange();
+        range.selectNodeContents(draggable);
+        const selection = window.getSelection();
+        selection.removeAllRanges();
+        selection.addRange(range);
     }
 
     draggableMousemove(e) {
