@@ -4,52 +4,83 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> -->
     <title>multi_window_search</title>
 </head>
 
 <body>
     <div class="sidebar">
-        <div class="create-box-button js-create-box-button">создать окно поиска</div>
-        <div class="sidebar-fold js-sidebar-fold">
-            <div class="sidebar-li js-sidebar-li">
-                <li draggable="true" title="/mnt/c/Users/Ucer/Desktop/psn/droup">
-                    <div class="title js-sidebar-title">
-                        <span>/mnt/c/Users/Ucer/Desktop/psn/droup 1</span>
-                    </div>
-                    <div class="delete js-sidebar-delete">×</div>
+        <div class="composite-bar">
+            <ul class="actions-container">
+                <li class="actions-item" title="Создать поиск">
+                    <i class="icon icon-search"></i>
                 </li>
-                <li draggable="true" title="/mnt/c/Users/Ucer/Desktop/psn/droup">
-                    <div class="title js-sidebar-title">
-                        <span>/mnt/c/Users/Ucer/Desktop/psn/droup 2</span>
-                    </div>
-                    <div class="delete js-sidebar-delete">×</div>
+                <li class="actions-item js-active-files-show" title="Активные окна">
+                    <i class="icon icon-active-files"></i>
                 </li>
-                <li draggable="true" title="/mnt/c/Users/Ucer/Desktop/psn/droup">
-                    <div class="title js-sidebar-title">
-                        <span>/mnt/c/Users/Ucer/Desktop/psn/droup 3 </span>
-                    </div>
-                    <div class="delete js-sidebar-delete">×</div>
+                <li class="actions-item" title="Рабочая область">
+                    <i class="icon icon-folder"></i>
                 </li>
-                <li draggable="true" title="/mnt/c/Users/Ucer/Desktop/psn/droup">
-                    <div class="title js-sidebar-title">
-                        <span>/mnt/c/Users/Ucer/Desktop/psn/droup 4</span>
-                    </div>
-                    <div class="delete js-sidebar-delete">×</div>
+                <li class="actions-item" title="История">
+                    <i class="icon icon-history"></i>
                 </li>
-                <li draggable="true" title="/mnt/c/Users/Ucer/Desktop/psn/droup">
-                    <div class="title js-sidebar-title">
-                        <span>/mnt/c/Users/Ucer/Desktop/psn/droup 5</span>
-                    </div>
-                    <div class="delete js-sidebar-delete">×</div>
+                <li class="actions-item" title="Разное">
+                    <i class="icon icon-different"></i>
                 </li>
+            </ul>
+        </div>
+
+
+        <div class="resizable active-files js-active-files" data-type="active-files">
+
+            <div class="active-files-body">
+                <div class="ps-overflow">
+                    <ul class="active-files-content js-active-files-list">
+                        <li draggable="true" title="/mnt/c/Users/Ucer/Desktop/psn/droup" class="active">
+                            <div class="title js-active-files-title">
+                                <span>/mnt/c/Users/Ucer/Desktop/psn/droup 1</span>
+                            </div>
+                            <i class="icon icon-remove-white js-active-files-delete"></i>
+                        </li>
+                        <li draggable="true" title="/mnt/c/Users/Ucer/Desktop/psn/droup">
+                            <div class="title js-active-files-title">
+                                <span>/mnt/c/Users/Ucer/Desktop/psn/droup 2</span>
+                            </div>
+                            <i class="icon icon-remove-white js-active-files-delete"></i>
+                        </li>
+                        <li draggable="true" title="/mnt/c/Users/Ucer/Desktop/psn/droup">
+                            <div class="title js-active-files-title">
+                                <span>/mnt/c/Users/Ucer/Desktop/psn/droup 3 </span>
+                            </div>
+                            <i class="icon icon-remove-white js-active-files-delete"></i>
+                        </li>
+                        <li draggable="true" title="/mnt/c/Users/Ucer/Desktop/psn/droup">
+                            <div class="title js-active-files-title">
+                                <span>/mnt/c/Users/Ucer/Desktop/psn/droup 4</span>
+                            </div>
+                            <i class="icon icon-remove-white js-active-files-delete"></i>
+                        </li>
+                        <li draggable="true" title="/mnt/c/Users/Ucer/Desktop/psn/droup">
+                            <div class="title js-active-files-title">
+                                <span>/mnt/c/Users/Ucer/Desktop/psn/droup 5</span>
+                            </div>
+                            <i class="icon icon-remove-white js-active-files-delete"></i>
+                        </li>
+                    </ul>
+
+                </div>
             </div>
-            <div class="sidebar-fold-btn js-sidebar-toggle">&lt;</div>
-            <div class="changing-size js-sidebar-changing-size">
+
+
+            <div class="changing-size js-changing-size">
                 <div class="bottom-right"></div>
                 <div class="bottom"></div>
                 <div class="right"></div>
             </div>
         </div>
+
+
+
     </div>
 
     <div class="element-search--TEST">
@@ -58,9 +89,9 @@
             <div class="header">
                 <div class="draggab js-draggableMousemove">./</div>
                 <div class="action js-action-win">
-                    <div class="header-close js-clone">-</div>
-                    <div class="header-open  js-open">□</div>
-                    <div class="header-delete  js-delete">×</div>
+                    <i class="icon icon-window-minimize js-clone"></i>
+                    <i class="icon icon-window-maximize js-open"></i>
+                    <i class="icon icon-window-close js-delete"></i>
                 </div>
             </div>
 
@@ -96,7 +127,7 @@
                         Изменяемый размер 2
                     </div>
 
-                    <div draggable="true"  id="3" class="suggest js-presearch-item">
+                    <div draggable="true" id="3" class="suggest js-presearch-item">
                         <div class="header">
                             <div class="relative-path">/mnt/c/Users/Ucer/Desktop/psn/droup</div>
                             <div class="action js-action-win" style="display: none;">
@@ -109,7 +140,7 @@
                     </div>
 
 
-                    <div draggable="true"  id="4" class="suggest js-presearch-item">
+                    <div draggable="true" id="4" class="suggest js-presearch-item">
                         <div class="header">
                             <div class="relative-path">/mnt/c/Users/Ucer/Desktop/psn/droup</div>
                             <div class="action js-action-win" style="display: none;">
@@ -140,14 +171,14 @@
     </div>
 
     <div class="canvas-section js-canvas-section">
-        <div class="resizable js-window" style="z-index: 3; left: 300px; width: 425px; height: 400px; top: 14px;">
+        <div class="resizable js-window" style="z-index: 3; left: 367px; width: 425px; height: 400px; top: 14px;">
             <div class="header">
                 <div class="draggab js-draggableMousemove" title="/mnt/c/Users/Ucer/Desktop/psn/droup">
                     /mnt/c/Users/Ucer/Desktop/psn/droup</div>
                 <div class="action js-action-win">
-                    <div class="header-close js-close">-</div>
-                    <div class="header-open js-open">□</div>
-                    <div class="header-delete js-delete">×</div>
+                    <i class="icon icon-window-minimize js-clone"></i>
+                    <i class="icon icon-window-maximize js-open"></i>
+                    <i class="icon icon-window-close js-delete"></i>
                 </div>
             </div>
 

@@ -2,12 +2,14 @@
 export class Sidebar {
     constructor() {
         this.sidebarFold = document.querySelector('.js-sidebar-fold');
-        this.sidebarToggle = document.querySelector('.js-sidebar-toggle');
+
+        this.activeFilesShow = document.querySelector('.js-active-files-show');
+        this.activeFiles = document.querySelector('.js-active-files');
         this.startDragover = false;
 
         this.direction = '';
         this.minHeight = 107;
-        this.minWidth = 330;
+        this.minWidth = 250;
         this.maxWidth = 750;
 
         this.left = '-337px';
@@ -16,81 +18,93 @@ export class Sidebar {
     }
 
     run() {
-        this.setupToggle();
-        this.setupDragAndDrop();
-        this.changeSize();
+        if (this.activeFilesShow) {
+            this.setupToggle();
+            this.setupDragAndDrop();
+            this.changeSize();
+        }
     }
 
     setupToggle() {
-        this.sidebarToggle.addEventListener('click', () => {
-            this.sidebarFold.classList.toggle('active');
-
-            if (this.sidebarFold.style.left === '0px') {
-                this.sidebarFold.style.left = this.left ;В
+        this.activeFilesShow.addEventListener('click', () => {
+            if (this.activeFiles.style.display === 'none' || this.activeFiles.style.display === '') {
+                this.activeFiles.style.display = 'block';
             } else {
-                this.sidebarFold.style.left = '0px';
+                this.activeFiles.style.display = 'none';
             }
         });
     }
 
     setupDragAndDrop() {
-        const sidebarLi = this.sidebarFold.querySelector('.js-sidebar-li');
-        const sidebarLiList = sidebarLi.querySelectorAll('li');
+        const activeFilesLi = this.activeFiles.querySelector('.js-active-files-list');
+        const activeFilesList = activeFilesLi.querySelectorAll('li');
 
-        let sdDelete
-        let sdTitle
-        sidebarLiList.forEach(sdLi => {
-            sdTitle = sdLi.querySelector('.js-sidebar-title');
-            sdTitle.addEventListener('click', () =>  this.sidebarShowSection(sdLi));
+        let afDelete
+        let afTitle
+        activeFilesList.forEach(afLi => {
+            afTitle = afLi.querySelector('.js-active-files-title');
+            afTitle.addEventListener('click', () =>  this.activeFilesShowSection(afLi));
 
-            sdDelete = sdLi.querySelector('.js-sidebar-delete');
-            sdDelete.addEventListener('click', () => this.sidebarDelete(sdLi));
+            afDelete = afLi.querySelector('.js-active-files-delete');
+            afDelete.addEventListener('click', () => this.activeFilesDelete(afLi));
 
-            sdLi.addEventListener('dragstart', (e) => this.handleDragStart(e, sdLi));
-            sdLi.addEventListener('dragend', (e) => this.handleDragEnd(e, sdLi));
+            afLi.addEventListener('dragstart', (e) => this.handleDragStart(e, afLi));
+            afLi.addEventListener('dragend', (e) => this.handleDragEnd(e, afLi));
         });
 
-        sidebarLi.addEventListener('dragover', (e) => this.initSortableList(e, sidebarLi));
-        sidebarLi.addEventListener('dragenter', e => e.preventDefault());
+        activeFilesLi.addEventListener('dragover', (e) => this.initSortableList(e, activeFilesLi));
+        activeFilesLi.addEventListener('dragenter', e => e.preventDefault());
     }
 
-    sidebarShowSection(sdLi) {
-        console.log('click sdLi');
+    activeFilesShowSection(afLi) {
+        // if (this.activeFiles.style.display === 'none' || this.activeFiles.style.display === '') {
+        //     this.activeFiles.style.display = 'block';
+        // } else {
+        //     this.activeFiles.style.display = 'none';
+        // }
+
+        // if (afLi.classList.contains('active')) {
+        //     afLi.classList.remove('active');
+        // } else {
+        //     afLi.classList.add('active');
+        // }
+
+        console.log('click afLi');
     }
 
-    sidebarDelete(sdLi) {
-        console.log('click sdDelete');
-        sdLi.remove()
+    activeFilesDelete(afLi) {
+        console.log('click afDelete');
+        afLi.remove()
     }
 
-    handleDragStart(e, sdLi) {
+    handleDragStart(e, afLi) {
         this.startDragover = true;
-        setTimeout(() => sdLi.classList.add('dragging'), 0);
+        setTimeout(() => afLi.classList.add('dragging'), 0);
     }
 
-    handleDragEnd(e, sdLi) {
+    handleDragEnd(e, afLi) {
         this.startDragover = false;
-        sdLi.classList.remove('dragging');
+        afLi.classList.remove('dragging');
     }
 
-    initSortableList(e, sidebarLi) {
+    initSortableList(e, activeFilesLi) {
         if (this.startDragover) {
             e.preventDefault();
-            const draggingItem = sidebarLi.querySelector('.dragging');
-            const siblings = [...sidebarLi.querySelectorAll('li:not(.dragging)')];
+            const draggingItem = activeFilesLi.querySelector('.dragging');
+            const siblings = [...activeFilesLi.querySelectorAll('li:not(.dragging)')];
 
             const nextSibling = siblings.find(sibling => {
                 return e.clientY < sibling.getBoundingClientRect().top + sibling.offsetHeight / 2;
             });
 
-            sidebarLi.insertBefore(draggingItem, nextSibling || null);
+            activeFilesLi.insertBefore(draggingItem, nextSibling || null);
         }
     }
 
     changeSize() {
-        const changingSides = this.sidebarFold.querySelectorAll('.js-sidebar-changing-size div');
-        changingSides.forEach(changingSide => {
-            changingSide.addEventListener('mousedown', this.initResize.bind(this));
+        const changingSizes = this.activeFiles.querySelectorAll('.js-changing-size div');
+        changingSizes.forEach(changingSize => {
+            changingSize.addEventListener('mousedown', this.initResize.bind(this));
         });
     }
 
@@ -103,7 +117,7 @@ export class Sidebar {
     }
 
     resize(e) {
-        const rect = this.sidebarFold.getBoundingClientRect();
+        const rect = this.activeFiles.getBoundingClientRect();
         this.resizeElement(e, rect);
     }
 
@@ -125,7 +139,7 @@ export class Sidebar {
 
         if (newWidth > this.minWidth && (newWidth + rect.left) < maxWidth  && this.maxWidth > newWidth) {
             // погрешность на кнопку
-            this.sidebarFold.style.width = `${newWidth + 23}px`;
+            this.activeFiles.style.width = `${newWidth}px`;
             this.left = `-${newWidth}px`;
         }
     }
@@ -134,7 +148,7 @@ export class Sidebar {
     resizeBottom(e, rect, maxHeight) {
         const newHeight = e.clientY - rect.top;
         if (newHeight > this.minHeight && (newHeight + rect.top) < maxHeight) {
-            this.sidebarFold.style.height = newHeight + 'px';
+            this.activeFiles.style.height = newHeight + 'px';
         }
     }
 

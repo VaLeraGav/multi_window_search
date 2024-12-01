@@ -1,0 +1,100 @@
+.icon {
+    margin-right: 5px;
+}
+
+.icon-search::before {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url('../img/search-regular.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+}
+
+.icon-active-files::before {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url('../img/active-files.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+}
+
+.icon-folder::before {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url('../img/folders-regular.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+}
+
+.icon-history::before {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url('../img/history-regular.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+}
+
+.icon-different::before {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url('../img/different.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+}
+
+.icon-remove-white::before {
+    content: '';
+    display: inline-block;
+    width: 9px;
+    height: 13px;
+    background-image: url('../img/remove-light-white.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+}
+
+.icon-window-close::before {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url('../img/window-close.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+}
+.icon-window-maximize::before {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url('../img/window-maximize.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+}
+.icon-window-minimize::before {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url('../img/window-minimize.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+}

@@ -47,12 +47,6 @@ export class Presearch {
 
 
     action(documentWindow) {
-        console.log(documentWindow);
-        let type = documentWindow.getAttribute('data-type');
-        if (type !== "search") {
-            return;
-        }
-
         let presearchWrap = documentWindow.querySelector('.js-presearch');
         if (!presearchWrap) {
             return;
@@ -77,13 +71,12 @@ export class Presearch {
     createDraggableWindow(content, title, left, top) {
         return `
         <div class="resizable js-window" style="z-index: 4; left: ${left - this.mouseXOffset}px; top: ${top}px; width: 500px; height: 400px;">
-
             <div class="header">
                 <div class="draggab js-draggableMousemove" title="${title}">${title}</div>
                 <div class="action js-action-win">
-                    <div class="header-close js-close">-</div>
-                    <div class="header-open js-open">□</div>
-                    <div class="header-delete js-delete">×</div>
+                    <i class="icon icon-window-minimize js-clone"></i>
+                    <i class="icon icon-window-maximize js-open"></i>
+                    <i class="icon icon-window-close js-delete"></i>
                 </div>
             </div>
 

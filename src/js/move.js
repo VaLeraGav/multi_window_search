@@ -23,12 +23,12 @@ export class Move {
             });
 
             draggable.addEventListener("dblclick", (event) => {
-                this.dblclickHeader();
+                this.dblclickHeader(draggable);
             });
         }
     }
 
-    dblclickHeader() {
+    dblclickHeader(draggable) {
         const range = document.createRange();
         range.selectNodeContents(draggable);
         const selection = window.getSelection();

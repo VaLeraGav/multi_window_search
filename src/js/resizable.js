@@ -5,7 +5,7 @@ export class Resizable {
         this.windowActive = null;
         this.direction = '';
         this.minHeight = 107;
-        this.minWidth = 330;
+        this.minWidth = 250;
 
         this.handleMouseMove = this.resize.bind(this);
         this.handleMouseUp = this.stopResize.bind(this);
